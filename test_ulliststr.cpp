@@ -35,8 +35,7 @@ ULListStr * makeList(std::vector<std::string> const & values, bool pushBack)
 }
 
 
-int main(int argc, char* argv[])
-{
+void test_pop_back() {
 	std::vector<std::string> content = {"sup", "er", "cal", "i", "frag", "il", "istic", "expi", "alo", "doc", "ious"};
 
 	ULListStr * list = makeList(content, true);
@@ -48,6 +47,54 @@ int main(int argc, char* argv[])
 	list->pop_back();
 
 	cout << "Final: " << list->get(9) << endl;
+}
+
+void test_pop_front() {
+	std::vector<std::string> content = {"sup", "er", "cal", "i", "frag", "il", "istic", "expi", "alo", "doc", "ious"};
+
+	ULListStr * list = makeList(content, true);
+
+	cout << list->get(9) << endl;
+	cout << list->get(10) << endl;
 
 
+	list->pop_front();
+
+	cout << "Final: " << list->get(9) << endl;
+}
+
+void test_push_front() {
+	std::vector<std::string> content = {"sup", "er", "cal", "i", "frag", "il", "istic", "expi", "alo", "doc", "ious"};
+
+	ULListStr * list = makeList(content, false);
+
+	cout << list->get(9) << endl;
+	cout << list->get(10) << endl;
+
+
+	list->pop_front();
+
+	cout << "Final: " << list->get(9) << endl;
+}
+
+void test_push_back() {
+	std::vector<std::string> content = {"Harman", "is", "Awesome", "Please", "Let", "Me", "Know", "if", "it", "is", "false"};
+
+	ULListStr * list = makeList(content, false);
+
+	cout << list->get(9) << endl;
+	cout << list->get(10) << endl;
+
+
+	list->pop_back();
+
+	cout << "Final: " << list->get(9) << endl;
+}
+
+int main(int argc, char* argv[])
+{
+	test_pop_back();
+	test_pop_front();//these check get in it
+	test_push_back();
+	test_push_front();
 }
